@@ -1,0 +1,66 @@
+---
+
+- hosts: lunanode 
+  become: true
+  remote_user: centos
+  become_method: sudo
+  become_user: root
+  vars_files:
+    - vars/main.yml
+  tasks:
+    - name: Install require packages 
+      become: true
+      become_user: root
+      yum: name={{item}} state=present update_cache=yes
+      with_items:
+        - git 
+        - wget
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+    - name: Add docker repo
+      command: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+    - name: Add ce edge
+      command:  yum-config-manager --enable docker-ce-edge
+    - name: Add ce test
+      command:  yum-config-manager --enable docker-ce-test
+    - name: Add docker package
+      yum: name=docker-ce state=present update_cache=yes
+    - name: set docker daemon 
+      command: systemctl enable docker
+    - name: start docker daemon 
+      command: systemctl start docker
+    - name: set default user in docker group 
+      command: usermod -aG docker centos 
+    - name: Install epel 
+      yum: name=epel-release state=present update_cache=yes
+    - name: install python pip
+      yum: name=python-pip state=present update_cache=yes 
+    - name: Install docker compose
+      command:  pip install docker-compose
+    - name: Install pyopenssl and other
+      command:  pip install pyopenssl ndg-httpsclient pyasn1
+    - name: Update urllib3
+      command: pip install -U urllib3
+    - name: git clone
+      git: repo=https://github.com/promogekko/solution.git dest=/home/centos/solution update=yes
+    - name: do docker-compose
+      command: chdir=/home/centos/solution docker-compose up -d
+    - include: tasks/main.yml
+    - name: Install python boto3
+      command: pip install boto3
+    - name: run copy logfiles to S3
+      become_user: centos
+      command: /home/centos/solution/log2S3.py
+    - name: Copy the .netrc conf file
+      copy:
+        dest: "/home/centos/.netrc"
+        owner: centos
+        mode: 0600 # needed since it contains a password
+        content: |
+             machine db 
+             login root
+             password password
+    - name: run backup database test to S3
+      become_user: centos
+      command: /home/centos/solution/mysql-backup.py
