@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df4f8a99-5737-4793-9156-f68af92a61b4" name="Default Changelist" comment="first init">
-      <change afterPath="$PROJECT_DIR$/.idea/crossover.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/icinga2/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/icinga2/Dockerfile" afterDir="false" />
+    <list default="true" id="df4f8a99-5737-4793-9156-f68af92a61b4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,20 +67,21 @@
       <path value="$PROJECT_DIR$/solution" />
     </ignored-roots>
     <MESSAGE value="first init" />
-    <option name="LAST_COMMIT_MESSAGE" value="first init" />
+    <MESSAGE value="set icinga2 to connect a host using ipv4" />
+    <option name="LAST_COMMIT_MESSAGE" value="set icinga2 to connect a host using ipv4" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2398" y="104" key="CommitChangelistDialog2" timestamp="1587885837745">
+    <state x="2398" y="104" key="CommitChangelistDialog2" timestamp="1587894701349">
       <screen x="1920" y="0" width="1680" height="1010" />
     </state>
-    <state x="2398" y="104" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1680.1010@1920.0.1680.1010" timestamp="1587885837745" />
+    <state x="2398" y="104" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1680.1010@1920.0.1680.1010" timestamp="1587894701349" />
     <state x="2263" y="151" key="SettingsEditor" timestamp="1587885781471">
       <screen x="1920" y="0" width="1680" height="1010" />
     </state>
     <state x="2263" y="151" key="SettingsEditor/0.0.1920.1040/1920.0.1680.1010@1920.0.1680.1010" timestamp="1587885781471" />
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1587887048995">
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2" timestamp="1587894703880">
       <screen x="1920" y="0" width="1680" height="1010" />
     </state>
-    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1680.1010@1920.0.1680.1010" timestamp="1587887048995" />
+    <state x="2352" y="242" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1680.1010@1920.0.1680.1010" timestamp="1587894703880" />
   </component>
 </project>
