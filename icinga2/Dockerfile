@@ -118,7 +118,7 @@ ADD content/ /
 # Final fixes
 RUN true \
     && sed -i 's/vars\.os.*/vars.os = "Docker"/' /etc/icinga2/conf.d/hosts.conf \
-    && sed -i 's/check_command = "hostalive"/check_command = "ping4"/' /etc/icinga2/conf.d/templates.conf \
+    //&& sed -i 's/check_command = "hostalive"/check_command = "ping4"/' /etc/icinga2/conf.d/templates.conf \
     && mv /etc/icingaweb2/ /etc/icingaweb2.dist \
     && mv /etc/icinga2/ /etc/icinga2.dist \
     && mkdir -p /etc/icinga2 \
