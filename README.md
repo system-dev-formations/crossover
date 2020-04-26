@@ -1,2 +1,2 @@
-# crossover
-Croos|over assigment exercice
+# Cross|over
+Cross|over assigment exercice
